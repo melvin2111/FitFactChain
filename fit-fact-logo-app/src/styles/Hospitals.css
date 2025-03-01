@@ -1,0 +1,88 @@
+/* Add these styles to your existing Dashboard.css file */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .close-btn:hover {
+    color: #333;
+  }
+  
+  .map-container {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .hospitals-list {
+    margin-top: 20px;
+  }
+  
+  .hospitals-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hospitals-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .hospitals-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .hospital-name {
+    font-weight: bold;
+  }
+  
+  .hospital-distance {
+    color: #666;
+  }
+  
+  .loading-text, .error-text {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .error-text {
+    color: #d9534f;
+  }
