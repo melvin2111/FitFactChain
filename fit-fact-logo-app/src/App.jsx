@@ -65,11 +65,39 @@ function App() {
                 }
               />
               
-              {/* Content Routes */}
-              <Route path="/home" element={<Home />} />
-              <Route path="/post/:id" element={<PostDetail />} />
-              <Route path="/ask" element={<SpecialtyList />} />
-              <Route path="/specialty/:specialtyName" element={<AskPost />} />
+              {/* Content Routes - Now Protected */}
+              <Route 
+                path="/home" 
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/post/:id" 
+                element={
+                  <ProtectedRoute>
+                    <PostDetail />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/ask" 
+                element={
+                  <ProtectedRoute>
+                    <SpecialtyList />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/specialty/:specialtyName" 
+                element={
+                  <ProtectedRoute>
+                    <AskPost />
+                  </ProtectedRoute>
+                } 
+              />
             </Routes>
           </div>
         </div>
