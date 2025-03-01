@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <header className="page-header">
-        <h1>My React Post Feed</h1>
+        <h1>Fit-Fact-Chain Posts</h1>
       </header>
       
       <main className="post-feed">

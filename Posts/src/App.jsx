@@ -5,6 +5,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import PostDetail from './pages/PostDetail';
+import SpecialtyList from './pages/SpecialtyList';
+import AskPost from './pages/AskPost';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/post/:id" element={<PostDetail />} />
+            <Route path="/ask" element={<SpecialtyList />} />
+            <Route path="/specialty/:specialtyName" element={<AskPost />} />
           </Routes>
         </div>
       </div>

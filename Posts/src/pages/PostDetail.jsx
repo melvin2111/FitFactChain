@@ -1,6 +1,7 @@
-// pages/PostDetail.jsx
+// // pages/PostDetail.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import CommentPanel from '../components/CommentPanel'; // Import the CommentPanel component
 
 // Sample post data for demonstration (this would come from an API in a real app)
 const samplePosts = [
@@ -190,6 +191,7 @@ const PostDetail = () => {
   const [post, setPost] = useState(null);
   const [voted, setVoted] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showComments, setShowComments] = useState(false); // New state for controlling comment panel visibility
 
   useEffect(() => {
     // In a real app, you would fetch the post data from an API
@@ -223,8 +225,9 @@ const PostDetail = () => {
   };
   
   const handleDiscuss = () => {
-    // In a real app, you would navigate to discussion page or open a modal
-    console.log(`Opening discussion for post ${post.id}`);
+    // Toggle the comment panel visibility
+    setShowComments(!showComments);
+    console.log(`${showComments ? 'Closing' : 'Opening'} discussion for post ${post.id}`);
   };
 
   return (
@@ -263,7 +266,7 @@ const PostDetail = () => {
               </button>
               
               <button 
-                className="discuss-button"
+                className={`discuss-button ${showComments ? 'active' : ''}`}
                 onClick={handleDiscuss}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -315,6 +318,13 @@ const PostDetail = () => {
             </div>
           </div>
         </div>
+        
+        {/* Comment panel that appears when the discuss button is clicked */}
+        {showComments && (
+          <div className="comments-container">
+            <CommentPanel postId={post.id} />
+          </div>
+        )}
       </div>
     </div>
   );

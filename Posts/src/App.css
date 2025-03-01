@@ -399,3 +399,144 @@ body {
     padding: 15px;
   }
 }
+
+/* Specialty List Page */
+.specialty-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.specialty-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.specialty-button {
+  background-color: white;
+  border: 1px solid var(--gray-med);
+  border-radius: var(--radius);
+  padding: 16px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.specialty-button:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments for Specialty List */
+@media (max-width: 600px) {
+  .specialty-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  
+  .specialty-button {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ask Post Page */
+.ask-post-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.create-post-button, .manage-posts-button {
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-post-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.create-post-button:hover {
+  background-color: #2980b9;
+}
+
+.manage-posts-button {
+  background-color: white;
+  border: 1px solid var(--gray-med);
+  color: var(--text-color);
+}
+
+.manage-posts-button:hover {
+  background-color: var(--gray-light);
+}
+
+.ask-post-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Ask Post Card */
+.ask-post-card {
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ask-post-card .post-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ask-post-card .discuss-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--gray-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ask-post-card .discuss-button span {
+  margin-left: 8px;
+}
+
+.ask-post-card .discuss-button:hover,
+.ask-post-card .discuss-button.active {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .ask-post-card .post-actions {
+    justify-content: center;
+  }
+}
