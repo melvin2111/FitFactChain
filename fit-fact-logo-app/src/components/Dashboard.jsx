@@ -482,6 +482,10 @@ const Dashboard = () => {
   const handleViewNews = () => {
     navigate('/health-news');
   };
+
+  const handleViewHistory = () => {
+    navigate('/health-history');
+  };
   
   // Close the map modal
   const closeMap = () => {
@@ -592,7 +596,7 @@ const Dashboard = () => {
             <div className="dashboard-card">
               <h3>My Health History</h3>
               <p>View past medical history </p>
-              <button className="card-btn">View History</button>
+              <button className="card-btn" onClick={handleViewHistory}>View History</button>
             </div>
             
             <div className="dashboard-card">

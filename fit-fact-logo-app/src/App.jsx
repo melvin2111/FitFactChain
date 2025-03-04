@@ -11,11 +11,13 @@ import DoctorRegister from './components/DoctorRegister';
 // Dashboard and protected components
 import Dashboard from './components/Dashboard';
 import HealthNews from './components/HealthNews';
+import HealthHistory from './components/HealthHistory'; // Add this import
 // Pages
 import Home from './pages/Home';
 import PostDetail from './pages/PostDetail';
 import SpecialtyList from './pages/SpecialtyList';
 import AskPost from './pages/AskPost';
+import PostEditor from './pages/PostEditor';
 // Context and styles
 import { AuthProvider } from './context/AuthContext';
 import './styles/global.css';
@@ -64,6 +66,15 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              {/* Add Health History Route */}
+              <Route
+                path="/health-history"
+                element={
+                  <ProtectedRoute>
+                    <HealthHistory />
+                  </ProtectedRoute>
+                }
+              />
               
               {/* Content Routes - Now Protected */}
               <Route 
@@ -79,6 +90,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <PostDetail />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/create-post" 
+                element={
+                  <ProtectedRoute>
+                    <PostEditor />
                   </ProtectedRoute>
                 } 
               />
